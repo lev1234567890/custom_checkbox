@@ -1,0 +1,64 @@
+/* CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins,'poppins', sans-serif;
+}
+body{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+}
+.checkLabel{
+    background: #0062ff;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 100px;
+    height: 100px;
+    cursor: pointer !important;
+    display: flex;
+    align-items: center;
+}
+input{
+    appearance: none;
+    width: 100px;
+    cursor: pointer !important;
+    height: 200px;
+}
+span{
+    transition: 0.5s;
+    position: absolute;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    transition-delay: 5ms;
+    cursor: pointer !important;
+    margin-left: 10px;
+    background: #fff;
+}
+span::before{
+    content: 'OFF';
+    color: #fd0000;
+    font-weight: 500;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    font-size: 30px;
+    position: absolute;
+}
+input:checked ~ span,
+input:checked + span{
+    margin-left: 110px;
+}
+input:checked ~ span::before,
+input:checked + span::before{
+    content: 'ON';
+    color: limegreen;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+}
